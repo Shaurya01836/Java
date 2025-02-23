@@ -9,6 +9,7 @@ public class Ques2 {
         System.out.print("Enter the side of the square :");
         side = s.nextInt();
         System.out.println("The area of the square is " + side * side);
+        s.close();
         
     }
 }

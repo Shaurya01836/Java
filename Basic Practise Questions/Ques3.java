@@ -17,5 +17,6 @@ public class Ques3 {
         billAmount = pen + pencil + eraser;
         billAmount = (billAmount * 18) / 100 + billAmount;
         System.out.println("Your amount is :" + billAmount);
+        s.close();
     }
 }

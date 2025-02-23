@@ -15,6 +15,7 @@ class Ques1 {
         System.out.print("Enter the third number :");
         c = s.nextInt();
         System.out.println("The average of the three numbers is " + (a + b + c) / 3);
+        s.close();
     }
 
 }

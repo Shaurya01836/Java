@@ -16,5 +16,6 @@ public class Ques4 {
         } else {
             System.out.println("Number is Negative");
         }
+        s.close();
     }
 }
