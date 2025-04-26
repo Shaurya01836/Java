@@ -1,14 +1,16 @@
+import Exp.*;
+import java.util.Scanner;
+
 public class power {
 
-    public static void power(int num, int power) {
-        int temp = num;
-        for (int i = 1; i < power; i++) {
-            num *= temp;
-        }
-        System.out.println(num);
-    }
-
     public static void main(String[] args) {
-        power(5, 3);
+        Scanner scn = new Scanner(System.in);
+        Power p = new Power();
+        System.out.print("Enter a number : ");
+        int a = scn.nextInt();
+        System.out.print("Enter exponent for " + a + " : ");
+        int b = scn.nextInt();
+        p.power(a, b);
+
     }
 }

@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Salary {
     public static void main(String[] args) {
-        float monthly_Expense = 0;
+        float monthly_Expense = 0f;
         Gross_Salary g = new Gross_Salary();
         Scanner scn = new Scanner(System.in);
         System.out.println("Enter your name : ");

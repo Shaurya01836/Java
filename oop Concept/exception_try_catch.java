@@ -7,12 +7,14 @@ public class exception_try_catch {
                 for (int j = i + 1; j < arr.length; j++) {
                     if (arr[i] == arr[j]) {
                         throw new Exception("Duplicate value Found");
+                    } else if(i== arr.length -1) {
+                        System.out.println("there is not duplicate value");
                     }
                 }
             }
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+           e.printStackTrace();
         }
 
     }
