@@ -26,6 +26,8 @@ public class Start {
         list.add(1,65);
         System.out.println(list);
 
+        System.out.println(list.size());
+
     }
 
 }
