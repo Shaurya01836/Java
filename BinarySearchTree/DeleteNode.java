@@ -40,8 +40,11 @@ public class DeleteNode {
             //case 1 : No child
             if (root.left == null && root.right == null) {
                 return null;
-            } else if (root.left == null) return root.right;
+            }
+            // case 2 : One child
+            else if (root.left == null) return root.right;
             else if (root.right == null) return root.left;
+            //case 3 : Both child present 
             else {
                 Node inOrder = foundInorder(root.right);
                 root.data = inOrder.data;
