@@ -1,66 +1,52 @@
+package Sorting;
+
 import PrintArray.printArray;
 
 public class MergeSort {
 
-    public static void mergeSort(int arr[], int startingIndex, int endingIndex) {
+    static void mergeSort(int[] arr, int l, int r) {
+        if (l >= r) return;
 
-        //base case
-        if (startingIndex >= endingIndex) {
-            return;
-        }
+        int mid = l + (r - l) / 2;
 
-        //better for big values
-        int mid = startingIndex + (endingIndex - startingIndex) / 2;
+        mergeSort(arr, l, mid);
+        mergeSort(arr, mid + 1, r);
 
-        mergeSort(arr, startingIndex, mid);
-        mergeSort(arr, mid + 1, endingIndex);
-        merge(arr, startingIndex, mid, endingIndex);
-
+        merge(arr, l, mid, r);
     }
 
-    public static void merge(int arr[], int startingIndex, int mid, int endingIndex) {
+    static void merge(int[] arr, int l, int mid, int r) {
+        int[] tempArray = new int[r - l + 1];
+        int i = l, j = mid+1, k = 0;
 
-        int tempArray[] = new int[endingIndex - startingIndex + 1];
-        int i = startingIndex; // for left part
-        int j = mid + 1; // for right part
-        int k = 0; // for temp array
-
-        while (i <= mid && j <= endingIndex) {
-            if (arr[i] < arr[j]) {
+        while (i <= mid && j <= r) {
+            if(arr[i] <= arr[j]){
                 tempArray[k++] = arr[i++];
-            } else if (arr[j] < arr[i]) {
-                tempArray[k++] = arr[j++];
-            } else {
-                tempArray[k++] = arr[i++];
+            }else if(arr[i] > arr[j]){
+                tempArray[k++] = arr[j++] ;
             }
         }
 
-        // if some numbers remain in left part
-        while (i <= mid) {
+        while (i <= mid){
             tempArray[k++] = arr[i++];
         }
 
-        // if some numbers remain in right part
-        while (j <= endingIndex) {
+        while (j <= r){
             tempArray[k++] = arr[j++];
         }
 
-        //copying the temp array to original one
-        for (int p = 0, q = startingIndex; p < tempArray.length; p++, q++) {
+        for(int p = 0 , q = l ; p < tempArray.length ; p++ , q++){
             arr[q] = tempArray[p];
         }
-
     }
 
     public static void main(String[] args) {
-        printArray print = new printArray();
-
-        int arr[] = {6, 4, 1, 3, 2, 5};
+        int[] arr = {6, 4, 1, 3, 2, 5};
         System.out.print("Array before sorting : ");
-        print.printingArrayFunction(arr);
+        printArray.printingArrayFunction(arr);
         mergeSort(arr, 0, arr.length - 1);
         System.out.print("\nArray after sorting  : ");
-        print.printingArrayFunction(arr);
+        printArray.printingArrayFunction(arr);
 
     }
 

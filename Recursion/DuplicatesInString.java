@@ -1,3 +1,5 @@
+package Recursion;
+
 import java.util.Scanner;
 
 public class DuplicatesInString {
@@ -24,7 +26,7 @@ public class DuplicatesInString {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        boolean map[] = new boolean[27];
+        boolean[] map = new boolean[27];
         StringBuilder newString = new StringBuilder();
         System.out.print("Enter a string (a-z): ");
         String string = sc.nextLine();

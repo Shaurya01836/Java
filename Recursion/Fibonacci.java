@@ -1,14 +1,17 @@
+package Recursion;
+
 import java.util.Scanner;
 
 public class Fibonacci {
 
-    public static int fibonacci(int num) {
-      if (num ==1 || num == 0){
-          return num;
-      }
-        int f1 = fibonacci(num - 1);
-        int f2 = fibonacci(num - 2);
-        return f1 + f2;
+
+    static int fibonacci(int num) {
+        if (num <= 1) return num;
+
+//        int l = fibonacci(num - 1);
+//        int r = fibonacci(num - 2);
+
+        return fibonacci(num-1) + fibonacci(num-2);
     }
 
     public static void main(String[] args) {
