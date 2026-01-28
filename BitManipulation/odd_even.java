@@ -1,3 +1,5 @@
+package BitManipulation;
+
 import java.util.Scanner;
 
 public class odd_even {
