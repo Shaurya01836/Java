@@ -8,11 +8,10 @@ class Solution {
             while (currSum >= target) {
                 res = Math.min(res, r - l + 1);
                 currSum -= nums[l++];
-
             }
         }
 
-        
+
         if (res == Integer.MAX_VALUE)
             return 0;
         return res;
