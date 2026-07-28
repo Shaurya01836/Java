@@ -1,4 +1,13 @@
 class Solution {
+
+    boolean isVowel(char ch) {
+        return (ch == 'a' || ch == 'e' ||
+                ch == 'i' || ch == 'o' ||
+                ch == 'u' || ch == 'A' ||
+                ch == 'E' || ch == 'I' ||
+                ch == 'O' || ch == 'U') ; 
+    }
+
     public String sortVowels(String s) {
 
         char[] arr = s.toCharArray();
@@ -6,27 +15,19 @@ class Solution {
 
         for (int i = 0; i < arr.length; i++) {
 
-            if (arr[i] == 'a' || arr[i] == 'e' ||
-                    arr[i] == 'i' || arr[i] == 'o' ||
-                    arr[i] == 'u' || arr[i] == 'A' ||
-                    arr[i] == 'E' || arr[i] == 'I' ||
-                    arr[i] == 'O' || arr[i] == 'U') {
+            if (isVowel(arr[i])) {
                 chars.add(arr[i]);
             }
         }
 
-        Collections.sort(chars) ;
+        Collections.sort(chars);
 
-        int j = 0 ;  
+        int j = 0;
 
-         for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
 
-            if (arr[i] == 'a' || arr[i] == 'e' ||
-                    arr[i] == 'i' || arr[i] == 'o' ||
-                    arr[i] == 'u' || arr[i] == 'A' ||
-                    arr[i] == 'E' || arr[i] == 'I' ||
-                    arr[i] == 'O' || arr[i] == 'U') {
-                arr[i] = chars.get(j++) ; 
+            if (isVowel(arr[i])) {
+                arr[i] = chars.get(j++);
             }
         }
 
