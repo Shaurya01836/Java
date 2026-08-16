@@ -1,0 +1,22 @@
+class Solution {
+    public int[] singleNumber(int[] nums) {
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        int res[] = new int[2];
+
+        for (int i : nums) {
+            map.put(i, map.getOrDefault(i, 0) + 1);
+        }
+
+        int k = 0;
+
+        for (int i : nums) {
+            if (map.get(i) == 1)
+                res[k++] = i;
+        }
+
+        return res;
+
+    }
+}
