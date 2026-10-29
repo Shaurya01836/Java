@@ -1,6 +1,6 @@
 class Solution {
 
-    int res = Integer.MAX_VALUE;
+    int res;
     Set<Integer>[][] dp;
 
     void rec(int[][] grid, int m, int n, int xor) {
@@ -31,6 +31,7 @@ class Solution {
         int m = grid.length , n = grid[0].length;
 
         dp = new HashSet[m][n];
+        res = Integer.MAX_VALUE;
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -38,7 +39,6 @@ class Solution {
             }
         }
 
-        res = Integer.MAX_VALUE;
         rec(grid, 0, 0, 0);
 
         return res;
